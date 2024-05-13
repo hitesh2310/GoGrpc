@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package person;
+
+option go_package="pkg/proto"; 
+
+
+message Person {
+    string name = 1 ;
+    int32 id = 2;
+    repeated string email = 3;
+}
+
+
+message Response {
+    string message = 1 ;
+ }
+
+service MyService {
+    rpc SendData(Person) returns (Response);
+  }
+
+
